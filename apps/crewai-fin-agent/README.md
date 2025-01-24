@@ -6,6 +6,11 @@ Welcome to the CrewaiFinAgent Crew project, powered by [crewAI](https://crewai.c
 
 Ensure you have Python >=3.10 <=3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
 
+```bash
+python -m venv env
+source env/bin/activate
+```
+
 First, if you haven't already, install uv:
 
 ```bash
@@ -16,7 +21,7 @@ Next, navigate to your project directory and install the dependencies:
 
 (Optional) Lock the dependencies and install them by using the CLI command:
 ```bash
-crewai install
+pip install crewai
 ```
 ### Customizing
 

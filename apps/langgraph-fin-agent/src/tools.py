@@ -11,6 +11,12 @@ import os
 from typing import List, Literal, Dict, Any, Optional
 import requests
 from bs4 import BeautifulSoup
+from urllib.request import Request, urlopen
+from urllib.parse import urlencode
+import os
+import time
+import json
+from dotenv import load_dotenv
 
 
 def _fmp_request(endpoint: str, params: Dict[str, Any] = None, max_retries: int = 3) -> Dict[str, Any]:
@@ -31,7 +37,7 @@ def _fmp_request(endpoint: str, params: Dict[str, Any] = None, max_retries: int 
     for attempt in range(max_retries):
         try:
             request = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            response = urlopen(request, cafile=certifi.where())
+            response = urlopen(request)  # Removed cafile argument
             data = response.read().decode("utf-8")
 
             if not data:

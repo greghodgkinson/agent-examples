@@ -4,12 +4,16 @@ version = "0.1.0"
 description = "Finance agent built using Langgraph"
 authors = ["Yi Zhang <yi@relari.ai>"]
 readme = "README.md"
+packages = [
+    { include = "src" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
 langgraph = "^0.2.45"
 python-dotenv = "^1.0.1"
 langchain-openai = "^0.2.8"
+beautifulsoup4 = "^4.12.3"
 
 
 [build-system]
